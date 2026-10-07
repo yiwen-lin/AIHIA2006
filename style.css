@@ -1,0 +1,1023 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+:root {
+  --full: 1440px;
+}
+
+body,
+div,
+a,
+img,
+ul,
+li,
+header,
+footer,
+nav {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: "cormorant-garamond", "Noto Sans TC", sans-serif;
+  box-sizing: border-box;
+  color: #0a0c00;
+  list-style: none;
+}
+.allCon {
+  position: relative;
+  overflow: hidden;
+}
+.mobileNav {
+  width: 300px;
+  position: fixed;
+  left: -300px;
+  opacity: 0;
+  top: 0;
+  height: 100dvh;
+  background-color: #fff;
+  z-index: 99;
+  transition: 0.5s all;
+}
+.mobileNavMask {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 98;
+  width: 100vw;
+  height: 100dvh;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.fixedBtn {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  font-size: 16px;
+  width: 180px;
+  height: 180px;
+  background-color: #e3ff04;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fixedBtnCon {
+  height: 72px;
+  overflow: hidden;
+}
+.fixBtnMove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.fixBtnMove1 {
+  position: relative;
+  margin-top: 0;
+  transition: 0.3s all;
+}
+
+.fixedBtn:hover .fixBtnMove1 {
+  margin-top: -72px;
+}
+
+@media only screen and (max-width: 576px) {
+  .fixedBtn {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+    right: 12px;
+  }
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
+  transition: 0.5s all;
+}
+
+.innerHeader {
+  padding: 23px 36px;
+  max-width: var(--full);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerWhite {
+  background-color: #fff;
+}
+
+.alUl {
+  display: flex;
+  gap: 68px;
+  align-items: center;
+}
+.useHover {
+  display: block;
+  height: 20px;
+  text-shadow: 0 16px #0a0c00;
+  overflow: hidden;
+}
+
+.useHover span {
+  position: relative;
+  top: 0;
+  text-decoration: none;
+  transition: 0.2s all;
+}
+
+.useHover:hover span {
+  top: -20px;
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+}
+.logo {
+  width: 220px;
+}
+.underLogo {
+  width: 220px;
+}
+@media only screen and (max-width: 991px) { /* RWD: 漢堡選單從 576px 延伸到 991px，平板不再擠壓選單文字 */
+  .alUl {
+    display: none;
+  }
+  .logo {
+    width: 230px;
+  }
+  .innerHeader {
+    padding: 25px 12px;
+  }
+  .burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #0a0c00;
+  }
+  .burger div {
+    width: 18px;
+    height: 2px;
+    background-color: #0a0c00;
+  }
+  .mobileNavMove {
+    left: 0;
+    opacity: 1;
+  }
+  .mobileNavMaskOpen {
+    display: block;
+  }
+  .mobileNavTop {
+    padding: 15px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .closeBurger {
+    border: 2px solid #0a0c00;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: relative;
+  }
+  .closeBurger div {
+    background-color: #0a0c00;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -2px;
+  }
+  .closeBurger div:first-child {
+    transform: rotateZ(45deg);
+  }
+  .closeBurger div:last-child {
+    transform: rotateZ(-45deg);
+  }
+  .mobileUl {
+    padding: 20px 34px 14px 34px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+  }
+  .mobileUl li a {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+  .underArrow {
+    margin-left: 10px;
+    transition: 0.3s all;
+  }
+  .mobileUl li a.current {
+    text-decoration: underline;
+  }
+  .mobileYear {
+    width: 209px;
+    height: 57px;
+    background-color: #0a0c00;
+    color: #fff;
+    text-align: center;
+    line-height: 57px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+}
+.alUl > li > .curent {
+  text-decoration: underline;
+}
+.alUl > li > a {
+  font-size: 16px;
+}
+
+.alUl > li {
+  position: relative;
+}
+.year {
+  width: 209px;
+  height: 57px;
+  background-color: #0a0c00;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+.year .mask {
+  display: inline-block;
+  overflow: hidden;
+  height: 20px;
+}
+.year .mask .move {
+  position: relative;
+  transition: 0.3s top;
+  color: #fff;
+  text-shadow: 0 17px 0 #fff;
+  top: 0;
+}
+.year:hover .mask .move {
+  top: -22px;
+  text-decoration: none;
+}
+
+.year:hover .mask .move:hover {
+  text-decoration: none;
+}
+.second {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  overflow: hidden;
+  height: 0;
+  transition: 0.3s height;
+}
+.secondOpen {
+  height: 100px;
+}
+.second > li {
+  width: 198px;
+  height: 50px;
+  background-color: #0a0c00;
+}
+.second .mask {
+  display: inline-block;
+  overflow: hidden;
+  height: 20px;
+}
+.second > li > a {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  letter-spacing: 4px;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.second > li > a .move {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: 0 17px 0 #fff;
+  transition: 0.3s top;
+  top: 0;
+  position: relative;
+}
+.second > li:hover > a .move {
+  top: -22px;
+}
+.kv {
+  height: 820px;
+  background: linear-gradient(180deg, #a4b3c6 2.62%, #ffffff 31.19%);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 54px;
+  z-index: 0;
+}
+
+.AIHIA_PC {
+  transition: 0.5s all ease-in-out;
+  opacity: 0;
+  transform: scale(1.5);
+}
+
+.AIHIA_PC_show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 576px) {
+  .kv {
+    height: 500px;
+  }
+  .kv img {
+    width: 95%;
+  }
+}
+.wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: 800px;
+}
+.wrapperReport {
+  margin-top: 0;
+  background: linear-gradient(215deg, #a4b3c6 5%, #ffffff 30.19%);
+}
+@media only screen and (max-width: 576px) {
+  .wrapperReport {
+    background: linear-gradient(215deg, #a4b3c6 1%, #ffffff 10.19%);
+  }
+}
+
+.reportKv {
+  height: 600px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.r1 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.r2 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.kvTitle {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+.wrapperWhite {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 2.62%,
+    rgba(255, 255, 255, 1) 20.19%
+  );
+  width: 100%;
+}
+.bold25 {
+  font-weight: 600;
+}
+.wrapperInner {
+  max-width: var(--full);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+.block01 {
+  padding: 140px 0 140px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+.block01Info {
+  max-width: 585px;
+}
+.bigT {
+  margin-bottom: 12px;
+  color: #728cb3;
+  font-size: 36px;
+}
+.middleT {
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.txt {
+  color: #0a0c00;
+  font-size: 20px;
+  line-height: 36px;
+}
+.handBlock {
+  width: 100%;
+  height: 608px;
+  position: relative;
+  overflow: hidden;
+}
+.handBlock:hover .handBlockImg {
+  transform: translateX(20px);
+}
+.handBlockImg {
+  position: absolute;
+  width: calc(100% + 20px);
+  height: 100%;
+  left: -20px;
+  object-position: right center;
+  object-fit: cover;
+  transition: 0.5s all;
+}
+.handBlock::after {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+.handInfoCon {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 120px 140px;
+  z-index: 2;
+  align-items: flex-end;
+}
+.handInfo {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+}
+.detila {
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 5px;
+}
+.detila::before {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s all linear;
+}
+.detila::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.6s all linear;
+}
+.detila:hover::before {
+  left: 100%;
+}
+.detila:hover::after {
+  left: 0;
+}
+.detila img {
+  align-self: center;
+}
+.detila div {
+  display: block;
+  overflow: hidden;
+  height: 22px;
+}
+.detila div span {
+  color: #fff;
+  transition: 0.3s all;
+  position: relative;
+  top: 0;
+  text-shadow: 0 20px #fff;
+}
+.detila:hover div span {
+  top: -23px;
+}
+.reportBlockInner {
+  max-width: 1330px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 164px;
+}
+.dIcon {
+  margin-left: 5px;
+  position: relative;
+  top: 3px;
+}
+@media only screen and (max-width: 1370px) {
+  .p {
+    width: calc(33% - 10px);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .p {
+    width: calc(50% - 10px);
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .p {
+    width: 100%;
+  }
+  .p .demoCon > img {
+    width: 100%;
+    left: 0;
+  }
+  .reportBlockInner {
+    padding-top: 60px;
+  }
+}
+.other {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.aTitle {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-family: "Noto Sans TC";
+}
+.readMore {
+  display: inline-flex;
+  overflow: hidden;
+  position: relative;
+}
+.readMore::before {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #0a0c00;
+  transition: 0.3s all linear;
+}
+.readMore::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  height: 2px;
+  background-color: #0a0c00;
+  transition: 0.6s all linear;
+}
+.readMore:hover::before {
+  left: 100%;
+}
+.readMore:hover::after {
+  left: 0;
+}
+.readMore img {
+  align-self: center;
+}
+.readMore div {
+  display: block;
+  overflow: hidden;
+  height: 22px;
+}
+.readMore div span {
+  transition: 0.3s all;
+  position: relative;
+  top: 0;
+  text-shadow: 0 20px #0a0c00;
+  font-size: 14px;
+  font-weight: 600;
+}
+.readMore:hover div span {
+  top: -23px;
+}
+.arrowB {
+  position: relative;
+  margin-left: 5px;
+}
+.reportBlockSecond {
+  background-color: transparent;
+}
+.moreArticle {
+  margin-top: 80px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0c00;
+  width: 152px;
+  height: 57px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.moreArticleMask {
+  overflow: hidden;
+}
+.moreArticleMask .moreArticleMove {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  transition: 0.3s all;
+  text-shadow: 0 21px #fff;
+}
+.moreArticle:hover .moreArticleMask .moreArticleMove {
+  top: -23px;
+}
+.underNav {
+  width: 100%;
+  display: flex;
+  border-top: 2px solid #0a0c00;
+  border-bottom: 2px solid #0a0c00;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  max-width: 1330px;
+  margin: 0 auto;
+  gap: 40px;
+}
+.underNav li a {
+  font-weight: 500;
+  font-size: 16px;
+}
+.underUlCon {
+  background-color: #fff;
+  padding-top: 190px;
+  position: relative;
+  z-index: 1;
+}
+footer {
+  background-color: #fff;
+  padding-top: 50px;
+  position: relative;
+  z-index: 1;
+}
+.footerInner {
+  background: linear-gradient(0deg, #a4b3c6 0%, #ffffff 100%);
+  padding-bottom: 140px;
+}
+.footerMax {
+  max-width: 1330px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.footerMaxLeft {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  align-items: center;
+}
+.footerMaxRight {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+}
+.pages {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+  gap: 15px;
+}
+
+.pages li {
+  width: 60px;
+  height: 60px;
+  background-color: #f6f5f3;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 60px;
+}
+
+.pages li:hover {
+  background-color: #0a0c00;
+}
+
+.pages li.current {
+  background-color: #0a0c00;
+}
+.pages li.current a {
+  color: #fff;
+}
+
+.pages li:hover a {
+  color: #fff;
+}
+
+.pages li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.showMobile {
+  display: none;
+}
+.firstHide {
+  display: none;
+}
+@media only screen and (max-width: 576px) {
+  .moreArticle {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 60px;
+  }
+  .underUlCon {
+    padding-top: 174px;
+  }
+  .wrapper {
+    margin-top: 500px;
+  }
+  .kvTitle {
+    line-height: 30px;
+    font-size: 18px;
+  }
+  .block01 {
+    flex-direction: column;
+  }
+  .block01 > img {
+    width: 360px;
+  }
+  .block01Info {
+    text-align: center;
+  }
+  .handBlock {
+    height: 500px;
+  }
+  .handBlock::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  }
+  .handBlock .handBlockImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    left: 0;
+  }
+  .handInfoCon {
+    flex-direction: column;
+    padding: 55px 18px 24px;
+    align-items: flex-start;
+  }
+  .handInfo {
+    font-size: 30px;
+  }
+  .detila {
+    font-size: 18px;
+    margin-top: 28px;
+  }
+  .reportTitle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .underUlCon {
+    padding-left: 12px;
+  }
+  .underNav {
+    border: none;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .underNav a {
+    font-size: 16px;
+  }
+  .footerMax {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 12px;
+  }
+  .footerMaxLeft {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+  .footerMaxRight {
+    flex-direction: column;
+    border-top: 2px solid #0a0c00;
+    gap: 10px;
+    padding-top: 15px;
+  }
+  .footerInner {
+    padding-bottom: 20px;
+  }
+  .hideMobile {
+    display: none;
+  }
+  .showMobile {
+    display: inline;
+  }
+  .firstHide {
+    padding-left: 30px;
+  }
+  .firstHideOpen {
+    display: block;
+  }
+  .navFirstHide {
+    display: none;
+    margin-left: 10px;
+  }
+  .navFirstHideOpen {
+    display: block;
+  }
+  .navFirstHideTop {
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  .wrapperReport {
+    margin-top: 0;
+  }
+  .rotation {
+    transform: rotateZ(180deg);
+  }
+  .reportKv {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .reportTitleHide {
+    display: none;
+  }
+  .mobilePageHide {
+    display: none;
+  }
+  .fixedBtnCon {
+    height: 55px;
+  }
+}
+
+.allNoto {
+  font-family: "Noto Sans TC" !important;
+}
+.opa {
+  /* opacity: 0; */
+}
+
+/* ===== RWD 微調 2026-10 ===== */
+
+/* 漢堡選單內「歷屆大獎」子選單：跟著選單一起延伸到 991px */
+@media only screen and (max-width: 991px) {
+  .navFirstHide {
+    display: none;
+    margin-left: 10px;
+  }
+  .navFirstHideOpen {
+    display: block;
+  }
+  .navFirstHideTop {
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  .rotation {
+    transform: rotateZ(180deg);
+  }
+}
+
+/* KV 的 AIHIA 大字：原本固定 1440px 寬，1440 以下左右被裁切 */
+.AIHIA_PC {
+  max-width: 95%;
+  height: auto;
+}
+
+/* 平板（577–991px） */
+@media only screen and (min-width: 577px) and (max-width: 991px) {
+  .kv {
+    height: 600px;
+  }
+  .wrapper {
+    margin-top: 580px;
+  }
+  .wrapperReport {
+    margin-top: 0; /* 相關報導頁沒有 KV，不套用上方間距 */
+  }
+  .innerHeader {
+    padding: 20px 24px;
+  }
+  .fixedBtn {
+    width: 130px;
+    height: 130px;
+    font-size: 14px;
+    right: 24px;
+  }
+  /* 圖文改上下排列，避免文字欄只剩 240px */
+  .block01 {
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 0;
+  }
+  .block01 > img {
+    width: 320px;
+  }
+  .block01Info {
+    text-align: center;
+  }
+  .handBlock {
+    height: 520px;
+  }
+  .handInfoCon {
+    padding: 60px 40px;
+  }
+  .handInfo {
+    font-size: 36px;
+  }  /* 頁尾：平板改上下排列，避免標語與版權擠成窄欄 */
+  .footerMax {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+/* 手機圓形 logo：避免 360px 在 320–375px 螢幕超出 */
+@media only screen and (max-width: 576px) {
+  .block01 > img {
+    width: min(360px, 100%);
+  }
+}
+
+/* 頁尾連結列與版權列：1370px 以下原本貼齊螢幕邊緣，補左右留白 */
+@media only screen and (min-width: 577px) and (max-width: 1370px) {
+  .underNav,
+  .footerMax {
+    width: calc(100% - 40px);
+  }
+}
+
+/* 右下角圓形按鈕：原本靠怪異模式的行高剛好對齊，修正 DOCTYPE 後改用固定行高，避免露出第二組文字 */
+.fixBtnMove span {
+  line-height: 24px;
+}
+@media only screen and (max-width: 991px) {
+  .fixBtnMove span {
+    line-height: 18px;
+  }
+  .fixedBtnCon {
+    height: 54px;
+  }
+  .fixedBtn:hover .fixBtnMove1 {
+    margin-top: -54px;
+  }
+}
